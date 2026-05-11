@@ -1,0 +1,145 @@
+:root {
+  --bg: #0f233d;
+  --card: #152d53;
+  --text: #f8f7ff;
+  --accent: #ffb703;
+  --accent-soft: #ffd29f;
+  --border: rgba(255, 183, 3, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at top, #2d5d94 0%, #0f233d 55%);
+  color: var(--text);
+}
+
+.app-shell {
+  width: min(100%, 720px);
+  padding: 24px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+}
+
+header p {
+  margin: 10px 0 0;
+  color: #cbd6f2;
+}
+
+.quiz-card {
+  background: rgba(20, 37, 68, 0.92);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.25);
+}
+
+.question-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.question-box {
+  padding: 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  margin-bottom: 22px;
+}
+
+.answers {
+  display: grid;
+  gap: 12px;
+}
+
+.answer-btn {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.answer-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 183, 3, 0.5);
+}
+
+.answer-btn.correct {
+  background: #2d5d2e;
+  border-color: #7ed957;
+}
+
+.answer-btn.wrong {
+  background: #5a1e2b;
+  border-color: #ef476f;
+}
+
+.feedback {
+  min-height: 32px;
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 22px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f233d;
+  background: var(--accent);
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 520px) {
+  .quiz-card {
+    padding: 20px;
+  }
+
+  .answer-btn {
+    font-size: 0.95rem;
+    padding: 14px 16px;
+  }
+}
